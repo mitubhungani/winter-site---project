@@ -1,0 +1,181 @@
+{
+  "users": [
+    {
+      "id": "3ba7",
+      "username": "m",
+      "email": "m@m.m",
+      "password": "m"
+    },
+    {
+      "id": "c2bd",
+      "username": "l",
+      "email": "l@l.l",
+      "password": "l"
+    },
+    {
+      "id": "6966",
+      "username": "a",
+      "email": "a@a.a",
+      "password": "a"
+    },
+    {
+      "id": "cd85",
+      "username": "o",
+      "email": "o@o.o",
+      "password": "o"
+    },
+    {
+      "id": "9e5b",
+      "username": "u",
+      "email": "u@u.u",
+      "password": "u"
+    }
+  ],
+  "products": [
+    {
+      "id": "1371",
+      "Title": "This is second men men product",
+      "Image": "https://gw.alicdn.com/imgextra/O1CN01gYQ1dW1YlOJMojBC6_!!6000000003099-2-yinhe.png_468x468Q75.jpg_.webp",
+      "Desc": "this is product",
+      "Price": "500",
+      "Category": "Men"
+    },
+    {
+      "id": "2464",
+      "Title": "this is third product",
+      "Image": "https://i.pinimg.com/736x/92/55/ce/9255ce92b484acec48949df3de0d27be.jpg",
+      "Desc": "this is third product",
+      "Price": "520",
+      "Category": "Men"
+    },
+    {
+      "id": "4e93",
+      "Title": "this is fourth product",
+      "Image": "https://essboardstore.com.au/cdn/shop/files/haldigrat-hs-hooded-jacket-women-neo-mint-marine-8_620x.png?v=1713496159",
+      "Desc": "this is fourth product",
+      "Price": "150",
+      "Category": "Women"
+    },
+    {
+      "id": "b52f",
+      "Title": "this is product for you",
+      "Image": "https://basecampvt.com/cdn/shop/files/1010-30330-7521_main__45527.jpg?v=1700324016",
+      "Desc": "this is product for you",
+      "Price": "250",
+      "Category": "Women"
+    },
+    {
+      "id": "ae86",
+      "Title": "this is product for every ",
+      "Image": "https://static.mammut.com/512/1010-30330-2273_main_243610.jpg",
+      "Desc": "this is product for every ",
+      "Price": "250",
+      "Category": "Women"
+    },
+    {
+      "id": "510b",
+      "Title": "this is product for every ",
+      "Image": "https://www.bfgcdn.com/1500_1500_90/002-2932-0111/mammut-eiger-free-pro-hardshell-hooded-jacket-waterproof-jacket.jpg",
+      "Desc": "this is product for every ",
+      "Price": "250",
+      "Category": "Men"
+    },
+    {
+      "id": "ff84",
+      "Title": "this is product for every ",
+      "Image": "https://urbanoutdoor.lv/cdn/shop/files/mammut-haldigrat-air-sleposanas-lietus-jaka-sieviesu-4.jpg?v=1699140066",
+      "Desc": "this is product for every ",
+      "Price": "250",
+      "Category": "Men"
+    },
+    {
+      "id": "1d1e",
+      "Title": "this is men product",
+      "Image": "https://www.fjellsport.no/assets/blobs/1010-30360-5975-main-658fc4c33f.jpeg",
+      "Desc": "this is men product",
+      "Price": "150",
+      "Category": "Men"
+    },
+    {
+      "id": "7782",
+      "Title": "this is womwn product",
+      "Image": "https://www.bfgcdn.com/1500_1500_90/102-3309-0711/mammut-womens-taiss-hs-hooded-jacket-regenjacke.jpg",
+      "Desc": "this is women product",
+      "Price": "150",
+      "Category": "Women"
+    },
+    {
+      "id": "fccd",
+      "Title": "this is best womwn product",
+      "Image": "https://www.bergfuchs.at/media/catalog/product/cache/edd934458198d8f1f0c3c6681ef09e1d/m/a/mammut-taiss-hs-hooded-jacket-hardshelljacke-hot-red-marine.jpg",
+      "Desc": "this is women product",
+      "Price": "250",
+      "Category": "Women"
+    },
+    {
+      "id": "86d7",
+      "Title": "This is Men Product",
+      "Image": "https://mammut1862.com.au/cdn/shop/files/1010-30310-0001_main_650x.jpg?v=1709506437",
+      "Desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled",
+      "Price": "250",
+      "Category": "Men"
+    }
+  ],
+  "category": [
+    {
+      "id": "c5b9",
+      "category": "Men"
+    },
+    {
+      "id": "424e",
+      "category": "Women"
+    }
+  ],
+  "cart": [
+    {
+      "id": "fccd",
+      "Title": "this is best womwn product",
+      "Image": "https://www.bergfuchs.at/media/catalog/product/cache/edd934458198d8f1f0c3c6681ef09e1d/m/a/mammut-taiss-hs-hooded-jacket-hardshelljacke-hot-red-marine.jpg",
+      "Desc": "this is women product",
+      "Price": "250",
+      "Category": "Women",
+      "quantity": 1
+    },
+    {
+      "id": "2464",
+      "Title": "this is third product",
+      "Image": "https://i.pinimg.com/736x/92/55/ce/9255ce92b484acec48949df3de0d27be.jpg",
+      "Desc": "this is third product",
+      "Price": "520",
+      "Category": "Men",
+      "quantity": 1
+    },
+    {
+      "id": "510b",
+      "Title": "this is product for every ",
+      "Image": "https://www.bfgcdn.com/1500_1500_90/002-2932-0111/mammut-eiger-free-pro-hardshell-hooded-jacket-waterproof-jacket.jpg",
+      "Desc": "this is product for every ",
+      "Price": "250",
+      "Category": "Men",
+      "quantity": 1
+    },
+    {
+      "id": "4e93",
+      "Title": "this is fourth product",
+      "Image": "https://essboardstore.com.au/cdn/shop/files/haldigrat-hs-hooded-jacket-women-neo-mint-marine-8_620x.png?v=1713496159",
+      "Desc": "this is fourth product",
+      "Price": "150",
+      "Category": "Women",
+      "quantity": 1
+    },
+    {
+      "id": "7782",
+      "Title": "this is womwn product",
+      "Image": "https://www.bfgcdn.com/1500_1500_90/102-3309-0711/mammut-womens-taiss-hs-hooded-jacket-regenjacke.jpg",
+      "Desc": "this is women product",
+      "Price": "150",
+      "Category": "Women",
+      "quantity": 1
+    }
+  ]
+}
