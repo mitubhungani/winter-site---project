@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 
 export const getProduct = createAsyncThunk("/products", async () => {
   try {
-    let res = await axios.get(`http://localhost:3000/products`);
+    let res = await axios.get(`https://json-server-deployment-y10f.onrender.com/products`);
     return res.data;
   } catch (error) {
     console.log(error);
@@ -15,7 +15,7 @@ export const createProduct = createAsyncThunk(
   "/createProduct",
   async (products) => {
     try {
-      let res = await axios.post("http://localhost:3000/products", products);
+      let res = await axios.post("https://json-server-deployment-y10f.onrender.com/products", products);
       toast.success("Product Add Successfully");
       return res.data;
     } catch (error) {
@@ -26,7 +26,7 @@ export const createProduct = createAsyncThunk(
 
 export const deleteProduct = createAsyncThunk("/delete", async (id) => {
   try {
-    let res = await axios.delete(`http://localhost:3000/products/${id}`);
+    let res = await axios.delete(`https://json-server-deployment-y10f.onrender.com/products/${id}`);
     toast.success("Product Delete Successfully");
     return res.data;
   } catch (error) {
@@ -39,7 +39,7 @@ export const updateProduct = createAsyncThunk(
   async (product) => {
     try {
       let res = await axios.patch(
-        `http://localhost:3000/products/${product.id}`,
+        `https://json-server-deployment-y10f.onrender.com/products/${product.id}`,
         product
       );
       toast.success("Product Update Successfully");
@@ -55,7 +55,7 @@ export const getSingleProduct = createAsyncThunk(
   async (id) => {
     console.log(id);
     try {
-      let res = await axios.get(`http://localhost:3000/products/${id}`);
+      let res = await axios.get(`https://json-server-deployment-y10f.onrender.com/products/${id}`);
       return res.data;
     } catch (error) {
       console.log(error);
@@ -65,7 +65,7 @@ export const getSingleProduct = createAsyncThunk(
 
 export const HTLProducts = createAsyncThunk('/HTLProducts', async ()=>{
   try {
-    let res =await axios.get('http://localhost:3000/products')
+    let res =await axios.get('https://json-server-deployment-y10f.onrender.com/products')
     let item = res.data;
     let sortitem = item.sort((a,b)=>a.Price - b.Price);
     return sortitem;
@@ -76,7 +76,7 @@ export const HTLProducts = createAsyncThunk('/HTLProducts', async ()=>{
 
 export const LTHProducts = createAsyncThunk('/LTHProducts', async ()=>{
   try {
-    let res =await axios.get('http://localhost:3000/products')
+    let res =await axios.get('https://json-server-deployment-y10f.onrender.com/products')
     let item =await res.data;
     let sortitem = item.sort((a,b)=>b.Price - a.Price);
     return sortitem;
@@ -87,7 +87,7 @@ export const LTHProducts = createAsyncThunk('/LTHProducts', async ()=>{
 
 // export const SearchProduct = createAsyncThunk('/SearchProduct', async (val)=>{
 //   try {
-//     let res = await axios.get('http://localhost:3000/products')
+//     let res = await axios.get('https://json-server-deployment-y10f.onrender.com/products')
 //     let products = await res.data;
 //     let items = products.filter((ele)=>ele.Title.includes(val))
 //     return items;
@@ -99,7 +99,7 @@ export const LTHProducts = createAsyncThunk('/LTHProducts', async ()=>{
 
 // export const limitedProducts =createAsyncThunk('/limitedProducts',async () => {
 //   try {
-//     let res = await axios.get(`http://localhost:3000/products`)
+//     let res = await axios.get(`https://json-server-deployment-y10f.onrender.com/products`)
 //     return res.data;
 //   } catch (error) {
 

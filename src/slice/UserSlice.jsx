@@ -3,7 +3,7 @@
 
 // export const getUser = createAsyncThunk("/getuser", async () => {
 //   try {
-//     let res = await axios.get("http://localhost:3000/users");
+//     let res = await axios.get("https://json-server-deployment-y10f.onrender.com/users");
 //     return res.data;
 //   } catch (error) {
 //     console.log(error);
@@ -12,7 +12,7 @@
 
 // export const createUser = createAsyncThunk("/createUser", async (user) => {
 //   try {
-//     let res = await axios.post("http://localhost:3000/users", user);
+//     let res = await axios.post("https://json-server-deployment-y10f.onrender.com/users", user);
 //     localStorage.setItem("user", JSON.stringify(res.data));
 //     return res.data;
 //   } catch (error) {
@@ -22,7 +22,7 @@
 
 // export const loginUser = createAsyncThunk("/loginUser", async (user) => {
 //   try {
-//     let res = await axios.get("http://localhost:3000/users");
+//     let res = await axios.get("https://json-server-deployment-y10f.onrender.com/users");
 //     let data = res.data.filter(
 //       (ele) => ele.username === user.username && ele.password === user.password
 //     );
@@ -109,7 +109,7 @@ import toast from "react-hot-toast";
 
 export const getUser = createAsyncThunk("/getuser", async () => {
   try {
-    let res = await axios.get("http://localhost:3000/users");
+    let res = await axios.get("https://json-server-deployment-y10f.onrender.com/users");
     return res.data;
   } catch (error) {
     console.error("Failed to fetch users:", error);
@@ -119,7 +119,7 @@ export const getUser = createAsyncThunk("/getuser", async () => {
 
 export const createUser = createAsyncThunk("/createUser", async (user) => {
   try {
-    let res = await axios.post("http://localhost:3000/users", user);
+    let res = await axios.post("https://json-server-deployment-y10f.onrender.com/users", user);
     localStorage.setItem("user", JSON.stringify(res.data));
     toast.success('Signup Successfully');
     return res.data;
@@ -131,7 +131,7 @@ export const createUser = createAsyncThunk("/createUser", async (user) => {
 
 export const loginUser = createAsyncThunk("/loginUser", async (user) => {
   try {
-    let res = await axios.get("http://localhost:3000/users");
+    let res = await axios.get("https://json-server-deployment-y10f.onrender.com/users");
     let data = res.data.filter(
       (ele) => ele.username === user.username && ele.password === user.password
     );

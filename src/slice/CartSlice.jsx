@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 
 export const getCartProduct = createAsyncThunk("/cartProduct", async () => {
   try {
-    let res = await axios.get("http://localhost:3000/cart");
+    let res = await axios.get("https://json-server-deployment-y10f.onrender.com/cart");
     return res.data;
   } catch (error) {
     console.log(error);
@@ -13,7 +13,7 @@ export const getCartProduct = createAsyncThunk("/cartProduct", async () => {
 
 const isExists = async (id) => {
   try {
-    let res = await axios.get(`http://localhost:3000/cart/${id}`);
+    let res = await axios.get(`https://json-server-deployment-y10f.onrender.com/cart/${id}`);
     if (res.data) {
       console.log("Product already exists", res.data);
       return true;
@@ -30,7 +30,7 @@ export const createCartProduct = createAsyncThunk(
     try {
       const exist = await isExists(product.id);
       if (!exist) {
-        let res = await axios.post("http://localhost:3000/cart", product);
+        let res = await axios.post("https://json-server-deployment-y10f.onrender.com/cart", product);
         toast.success('Product Add Successfully');
         return res.data;
       } else {
@@ -48,7 +48,7 @@ export const deleteCartProduct = createAsyncThunk(
   "/deletecartProduct",
   async (id) => {
     try {
-      let res = await axios.delete(`http://localhost:3000/cart/${id}`);
+      let res = await axios.delete(`https://json-server-deployment-y10f.onrender.com/cart/${id}`);
       toast.success('Product Remove Successfully');
       return res.data;
     } catch (error) {
@@ -62,7 +62,7 @@ export const updateCartProduct = createAsyncThunk(
   async (product) => {
     try {
       let res = await axios.patch(
-        `http://localhost:3000/cart/${product.id}`,
+        `https://json-server-deployment-y10f.onrender.com/cart/${product.id}`,
         product
       );
       
@@ -75,7 +75,7 @@ export const updateCartProduct = createAsyncThunk(
 
 export const deleteAllCartProduct = createAsyncThunk('/deleteAllCartProduct', async (product) => {
   try {
-    let res= await axios.delete('http://localhost:3000/cart')
+    let res= await axios.delete('https://json-server-deployment-y10f.onrender.com/cart')
     return res.data;
   } catch (error) {
     console.log(error);
