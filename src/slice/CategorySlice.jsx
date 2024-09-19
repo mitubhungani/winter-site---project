@@ -4,7 +4,9 @@ import toast from "react-hot-toast";
 
 export const getCategory = createAsyncThunk("/category", async () => {
   try {
-    let res = await axios.get("https://json-server-deployment-y10f.onrender.com/category");
+    let res = await axios.get(
+      "https://json-server-deployment-y10f.onrender.com/category"
+    );
     return res.data;
   } catch (error) {
     console.log(error);
@@ -15,8 +17,11 @@ export const createCategory = createAsyncThunk(
   "/createCategory",
   async (categories) => {
     try {
-      let res = await axios.post("https://json-server-deployment-y10f.onrender.com/category", categories);
-      toast.success('Category Add Successfully');
+      let res = await axios.post(
+        "https://json-server-deployment-y10f.onrender.com/category",
+        categories
+      );
+      toast.success("Category Add Successfully");
 
       return res.data;
     } catch (error) {
@@ -29,8 +34,10 @@ export const deleteCategory = createAsyncThunk(
   "/deleteCategory",
   async (id) => {
     try {
-      let res = await axios.delete(`https://json-server-deployment-y10f.onrender.com/category/${id}`);
-      toast.success('Category Delete Successfully');
+      let res = await axios.delete(
+        `https://json-server-deployment-y10f.onrender.com/category/${id}`
+      );
+      toast.success("Category Delete Successfully");
       return res.data;
     } catch (error) {
       console.log(error);
@@ -41,14 +48,14 @@ export const deleteCategory = createAsyncThunk(
 export const updateCategory = createAsyncThunk(
   "/updateCategory",
   async (categories) => {
-    console.log("category",categories);
-    
+    console.log("category", categories);
+
     try {
       let res = await axios.patch(
         `https://json-server-deployment-y10f.onrender.com/category/${categories.id}`,
         categories
       );
-      toast.success('Category Update Successfully');
+      toast.success("Category Update Successfully");
       return res.data;
     } catch (error) {
       console.log(error);
@@ -92,11 +99,13 @@ export const categorySlice = createSlice({
       );
     });
     //update cat
-    builder.addCase(updateCategory.pending,(state,action)=>{
-      state.isLoading = true
-    })
+    builder.addCase(updateCategory.pending, (state, action) => {
+      state.isLoading = true;
+    });
     builder.addCase(updateCategory.fulfilled, (state, action) => {
-      state.categories = state.categories.map((ele)=>ele.id === action.payload.id ? action.payload :ele)
+      state.categories = state.categories.map((ele) =>
+        ele.id === action.payload.id ? action.payload : ele
+      );
       state.isLoading = false;
     });
     builder.addCase(updateCategory.rejected, (state, action) => {

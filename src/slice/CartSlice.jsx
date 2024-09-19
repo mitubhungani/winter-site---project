@@ -2,9 +2,12 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import toast from "react-hot-toast";
 
+const baseUrl ="https://json-server-deployment-y10f.onrender.com"
+// const baseUrl = "http://localhost:3000"
+
 export const getCartProduct = createAsyncThunk("/cartProduct", async () => {
   try {
-    let res = await axios.get("https://json-server-deployment-y10f.onrender.com/cart");
+    let res = await axios.get(`${baseUrl}/cart`);
     return res.data;
   } catch (error) {
     console.log(error);
@@ -13,7 +16,7 @@ export const getCartProduct = createAsyncThunk("/cartProduct", async () => {
 
 const isExists = async (id) => {
   try {
-    let res = await axios.get(`https://json-server-deployment-y10f.onrender.com/cart/${id}`);
+    let res = await axios.get(`${baseUrl}/cart/${id}`);
     if (res.data) {
       console.log("Product already exists", res.data);
       return true;
@@ -30,7 +33,7 @@ export const createCartProduct = createAsyncThunk(
     try {
       const exist = await isExists(product.id);
       if (!exist) {
-        let res = await axios.post("https://json-server-deployment-y10f.onrender.com/cart", product);
+        let res = await axios.post(`${baseUrl}/cart`, product);
         toast.success('Product Add Successfully');
         return res.data;
       } else {
@@ -48,7 +51,7 @@ export const deleteCartProduct = createAsyncThunk(
   "/deletecartProduct",
   async (id) => {
     try {
-      let res = await axios.delete(`https://json-server-deployment-y10f.onrender.com/cart/${id}`);
+      let res = await axios.delete(`${baseUrl}/cart/${id}`);
       toast.success('Product Remove Successfully');
       return res.data;
     } catch (error) {
@@ -62,7 +65,7 @@ export const updateCartProduct = createAsyncThunk(
   async (product) => {
     try {
       let res = await axios.patch(
-        `https://json-server-deployment-y10f.onrender.com/cart/${product.id}`,
+        `${baseUrl}/cart/${product.id}`,
         product
       );
       
@@ -73,9 +76,9 @@ export const updateCartProduct = createAsyncThunk(
   }
 );
 
-export const deleteAllCartProduct = createAsyncThunk('/deleteAllCartProduct', async (product) => {
+export const deleteAllCartProduct = createAsyncThunk('/deleteAllCartProduct', async (id) => {
   try {
-    let res= await axios.delete('https://json-server-deployment-y10f.onrender.com/cart')
+    let res= await axios.delete(`${baseUrl}/cart/${id}`)
     return res.data;
   } catch (error) {
     console.log(error);

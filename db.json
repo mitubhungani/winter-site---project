@@ -131,24 +131,5 @@
       "category": "Women"
     }
   ],
-  "cart": [
-    {
-      "id": "2464",
-      "Title": "this is third product",
-      "Image": "https://i.pinimg.com/736x/92/55/ce/9255ce92b484acec48949df3de0d27be.jpg",
-      "Desc": "this is third product",
-      "Price": "520",
-      "Category": "Men",
-      "quantity": 1
-    },
-    {
-      "id": "ae86",
-      "Title": "this is product for every ",
-      "Image": "https://static.mammut.com/512/1010-30330-2273_main_243610.jpg",
-      "Desc": "this is product for every ",
-      "Price": "250",
-      "Category": "Women",
-      "quantity": 1
-    }
-  ]
+  "cart": []
 }
