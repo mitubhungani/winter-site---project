@@ -351,7 +351,7 @@ const Home = () => {
           <h1 className="my-2 text-2xl md:text-3xl lg:text-4xl">SALE IS ON!</h1>
           <p className="text-3xl md:text-4xl lg:text-5xl mb-4">Bestseller</p>
           <p className="text-sm md:text-lg lg:text-xl mb-4">
-            25% off sitewide using code zzddae at checkout
+            25% off sitewide using code OFF25 at checkout
           </p>
           <Link
             to="/men"
