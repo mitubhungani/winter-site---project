@@ -77,7 +77,7 @@ const ProductPage = () => {
 
   return (
     <div className="bg-white text-black">
-      <div className="w-11/12 h-screen flex flex-col lg:flex-row m-auto my-6 gap-6">
+      <div className="w-11/12  flex flex-col lg:flex-row m-auto my-6 gap-6">
         <div className="w-full lg:w-1/2">
           <img
             className="h-84 sm:h-80 md:h-[400px] lg:h-[500px] m-auto w-full object-contain rounded-lg"

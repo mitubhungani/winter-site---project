@@ -347,7 +347,7 @@ const Cart = () => {
   }, [dispatch]);
 
   const totalCartPrice = data.carts.reduce((total, item) => {
-    return total + item.Price * item.quantity;
+    return total + item?.Price * item?.quantity;
   }, 0);
 
   return (
@@ -361,20 +361,20 @@ const Cart = () => {
         {/* Cart Items */}
         <div className="lg:w-2/3 w-full space-y-6">
           {data.carts.map((ele) => ele && (
-            <div className="bg-white shadow-lg rounded-lg border border-gray-300 p-6" key={ele.id}>
+            <div className="bg-white shadow-lg rounded-lg border border-gray-300 p-6" key={ele?.id}>
               <div className="flex flex-col md:flex-row md:justify-between md:items-center">
                 <div className="w-full md:w-auto">
                   <img
                     className="h-full w-full md:w-40 object-cover rounded-lg mb-4 md:mb-0"
-                    src={ele.Image}
-                    alt={ele.Title}
+                    src={ele?.Image}
+                    alt={ele?.Title}
                   />
                 </div>
                 <div className="flex-1 md:ml-8 text-center md:text-left">
                   <h2 className="text-2xl font-semibold text-gray-800">
-                    {ele.Title}
+                    {ele?.Title}
                   </h2>
-                  <p className="text-sm text-gray-600">{ele.Desc}</p>
+                  <p className="text-sm text-gray-600">{ele?.Desc}</p>
                 </div>
                 <div className="flex items-center justify-center space-x-6 md:space-x-8">
                   <button
@@ -383,7 +383,7 @@ const Cart = () => {
                   >
                     <FaMinus />
                   </button>
-                  <span className="text-lg font-bold text-gray-800">{ele.quantity}</span>
+                  <span className="text-lg font-bold text-gray-800">{ele?.quantity}</span>
                   <button
                     className="bg-gray-100 text-gray-600 p-2 rounded-lg hover:bg-gray-200"
                     onClick={() => handleIncrement(ele)}
