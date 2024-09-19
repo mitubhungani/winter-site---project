@@ -2,10 +2,13 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import toast from "react-hot-toast";
 
+let baseUrl = 'https://json-server-deployment-y10f.onrender.com'
+// let baseUrl = 'http://localhost:3000'
+
 export const getCategory = createAsyncThunk("/category", async () => {
   try {
     let res = await axios.get(
-      "https://json-server-deployment-y10f.onrender.com/category"
+      `${baseUrl}/category`
     );
     return res.data;
   } catch (error) {
@@ -18,7 +21,7 @@ export const createCategory = createAsyncThunk(
   async (categories) => {
     try {
       let res = await axios.post(
-        "https://json-server-deployment-y10f.onrender.com/category",
+        `${baseUrl}/category`,
         categories
       );
       toast.success("Category Add Successfully");
@@ -35,7 +38,7 @@ export const deleteCategory = createAsyncThunk(
   async (id) => {
     try {
       let res = await axios.delete(
-        `https://json-server-deployment-y10f.onrender.com/category/${id}`
+        `${baseUrl}/category/${id}`
       );
       toast.success("Category Delete Successfully");
       return res.data;
@@ -52,7 +55,7 @@ export const updateCategory = createAsyncThunk(
 
     try {
       let res = await axios.patch(
-        `https://json-server-deployment-y10f.onrender.com/category/${categories.id}`,
+        `${baseUrl}/category/${categories.id}`,
         categories
       );
       toast.success("Category Update Successfully");

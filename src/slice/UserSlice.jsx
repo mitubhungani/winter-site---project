@@ -2,9 +2,14 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import toast from "react-hot-toast";
 
+let baseUrl = 'https://json-server-deployment-y10f.onrender.com'
+// let baseUrl = 'http://localhost:3000'
+
 export const getUser = createAsyncThunk("/getuser", async () => {
   try {
-    let res = await axios.get("https://json-server-deployment-y10f.onrender.com/users");
+    let res = await axios.get(
+      `${baseUrl}/users`
+    );
     return res.data;
   } catch (error) {
     console.error("Failed to fetch users:", error);
@@ -14,9 +19,12 @@ export const getUser = createAsyncThunk("/getuser", async () => {
 
 export const createUser = createAsyncThunk("/createUser", async (user) => {
   try {
-    let res = await axios.post("https://json-server-deployment-y10f.onrender.com/users", user);
+    let res = await axios.post(
+      `${baseUrl}/users`,
+      user
+    );
     localStorage.setItem("user", JSON.stringify(res.data));
-    toast.success('Signup Successfully');
+    toast.success("Signup Successfully");
     return res.data;
   } catch (error) {
     console.error("Failed to create user:", error);
@@ -26,7 +34,9 @@ export const createUser = createAsyncThunk("/createUser", async (user) => {
 
 export const loginUser = createAsyncThunk("/loginUser", async (user) => {
   try {
-    let res = await axios.get("https://json-server-deployment-y10f.onrender.com/users");
+    let res = await axios.get(
+      `${baseUrl}/users`
+    );
     let data = res.data.filter(
       (ele) => ele.username === user.username && ele.password === user.password
     );

@@ -2,9 +2,12 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import toast from "react-hot-toast";
 
+let baseUrl = 'https://json-server-deployment-y10f.onrender.com'
+// let baseUrl = 'http://localhost:3000'
+
 export const getProduct = createAsyncThunk("/products", async () => {
   try {
-    let res = await axios.get(`https://json-server-deployment-y10f.onrender.com/products`);
+    let res = await axios.get(`${baseUrl}/products`);
     return res.data;
   } catch (error) {
     console.log(error);
@@ -15,7 +18,7 @@ export const createProduct = createAsyncThunk(
   "/createProduct",
   async (products) => {
     try {
-      let res = await axios.post("https://json-server-deployment-y10f.onrender.com/products", products);
+      let res = await axios.post(`${baseUrl}/products`, products);
       toast.success("Product Add Successfully");
       return res.data;
     } catch (error) {
@@ -26,7 +29,7 @@ export const createProduct = createAsyncThunk(
 
 export const deleteProduct = createAsyncThunk("/delete", async (id) => {
   try {
-    let res = await axios.delete(`https://json-server-deployment-y10f.onrender.com/products/${id}`);
+    let res = await axios.delete(`${baseUrl}/products/${id}`);
     toast.success("Product Delete Successfully");
     return res.data;
   } catch (error) {
@@ -39,7 +42,7 @@ export const updateProduct = createAsyncThunk(
   async (product) => {
     try {
       let res = await axios.patch(
-        `https://json-server-deployment-y10f.onrender.com/products/${product.id}`,
+        `${baseUrl}/products/${product.id}`,
         product
       );
       toast.success("Product Update Successfully");
@@ -55,7 +58,7 @@ export const getSingleProduct = createAsyncThunk(
   async (id) => {
     console.log(id);
     try {
-      let res = await axios.get(`https://json-server-deployment-y10f.onrender.com/products/${id}`);
+      let res = await axios.get(`${baseUrl}/products/${id}`);
       return res.data;
     } catch (error) {
       console.log(error);
@@ -65,7 +68,7 @@ export const getSingleProduct = createAsyncThunk(
 
 export const HTLProducts = createAsyncThunk('/HTLProducts', async ()=>{
   try {
-    let res =await axios.get('https://json-server-deployment-y10f.onrender.com/products')
+    let res =await axios.get(`${baseUrl}/products`)
     let item = res.data;
     let sortitem = item.sort((a,b)=>a.Price - b.Price);
     return sortitem;
@@ -76,7 +79,7 @@ export const HTLProducts = createAsyncThunk('/HTLProducts', async ()=>{
 
 export const LTHProducts = createAsyncThunk('/LTHProducts', async ()=>{
   try {
-    let res =await axios.get('https://json-server-deployment-y10f.onrender.com/products')
+    let res =await axios.get(`${baseUrl}/products`)
     let item =await res.data;
     let sortitem = item.sort((a,b)=>b.Price - a.Price);
     return sortitem;
@@ -84,27 +87,6 @@ export const LTHProducts = createAsyncThunk('/LTHProducts', async ()=>{
     console.log(error);
   }
 })
-
-// export const SearchProduct = createAsyncThunk('/SearchProduct', async (val)=>{
-//   try {
-//     let res = await axios.get('https://json-server-deployment-y10f.onrender.com/products')
-//     let products = await res.data;
-//     let items = products.filter((ele)=>ele.Title.includes(val))
-//     return items;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// })
-
-
-// export const limitedProducts =createAsyncThunk('/limitedProducts',async () => {
-//   try {
-//     let res = await axios.get(`https://json-server-deployment-y10f.onrender.com/products`)
-//     return res.data;
-//   } catch (error) {
-
-//   }
-// })
 
 export const productSlice = createSlice({
   name: "product",
