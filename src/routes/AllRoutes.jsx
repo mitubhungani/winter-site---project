@@ -10,13 +10,20 @@ import Addproduct from "../pages/Addproduct";
 import Addcategory from "../pages/Addcategory";
 import ProductPage from "../pages/ProductPage";
 import PrivetRoutes from "../components/PrivetRoutes";
-import  { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 
 const AllRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<PrivetRoutes><Home /></PrivetRoutes>}></Route>
+        <Route
+          path="/"
+          element={
+            <PrivetRoutes>
+              <Home />
+            </PrivetRoutes>
+          }
+        ></Route>
         <Route
           path="/men"
           element={
