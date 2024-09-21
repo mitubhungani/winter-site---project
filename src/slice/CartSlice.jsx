@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const baseUrl ="https://json-server-deployment-y10f.onrender.com"
+const baseUrl = "https://json-server-deployment-y10f.onrender.com";
 // const baseUrl = "http://localhost:3000"
 
 export const getCartProduct = createAsyncThunk("/cartProduct", async () => {
@@ -34,10 +34,10 @@ export const createCartProduct = createAsyncThunk(
       const exist = await isExists(product.id);
       if (!exist) {
         let res = await axios.post(`${baseUrl}/cart`, product);
-        toast.success('Product Add Successfully');
+        toast.success("Product Add Successfully");
         return res.data;
       } else {
-        toast.error('Product already exists in the cart');
+        toast.error("Product already exists in the cart");
         return null;
       }
     } catch (error) {
@@ -52,7 +52,7 @@ export const deleteCartProduct = createAsyncThunk(
   async (id) => {
     try {
       let res = await axios.delete(`${baseUrl}/cart/${id}`);
-      toast.success('Product Remove Successfully');
+      toast.success("Product Remove Successfully");
       return res.data;
     } catch (error) {
       console.log(error);
@@ -64,11 +64,8 @@ export const updateCartProduct = createAsyncThunk(
   "/updateCartProduct",
   async (product) => {
     try {
-      let res = await axios.patch(
-        `${baseUrl}/cart/${product.id}`,
-        product
-      );
-      
+      let res = await axios.patch(`${baseUrl}/cart/${product.id}`, product);
+
       return res.data;
     } catch (error) {
       console.log(error);
@@ -76,15 +73,17 @@ export const updateCartProduct = createAsyncThunk(
   }
 );
 
-export const deleteAllCartProduct = createAsyncThunk('/deleteAllCartProduct', async (id) => {
-  try {
-    let res= await axios.delete(`${baseUrl}/cart/${id}`)
-    return res.data;
-  } catch (error) {
-    console.log(error);
-    
+export const deleteAllCartProduct = createAsyncThunk(
+  "/deleteAllCartProduct",
+  async (id) => {
+    try {
+      let res = await axios.delete(`${baseUrl}/cart/${id}`);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
   }
-})
+);
 
 export const CartSlice = createSlice({
   name: "cart",
@@ -134,7 +133,7 @@ export const CartSlice = createSlice({
     builder.addCase(deleteAllCartProduct.fulfilled, (state, action) => {
       state.carts = [];
       state.isLoading = false;
-    })
+    });
   },
 });
 

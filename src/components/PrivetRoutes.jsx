@@ -12,7 +12,7 @@ const PrivetRoutes = ({ children }) => {
     return children;
   } else {
     console.log("user is logged in");
-    return <Navigate to="/signin"/>;
+    return <Navigate to="/signin" />;
   }
 };
 

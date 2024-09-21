@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-let baseUrl = 'https://json-server-deployment-y10f.onrender.com'
+let baseUrl = "https://json-server-deployment-y10f.onrender.com";
 // let baseUrl = 'http://localhost:3000'
 
 export const getProduct = createAsyncThunk("/products", async () => {
@@ -41,10 +41,7 @@ export const updateProduct = createAsyncThunk(
   "/updateProduct",
   async (product) => {
     try {
-      let res = await axios.patch(
-        `${baseUrl}/products/${product.id}`,
-        product
-      );
+      let res = await axios.patch(`${baseUrl}/products/${product.id}`, product);
       toast.success("Product Update Successfully");
       return res.data;
     } catch (error) {
@@ -66,27 +63,27 @@ export const getSingleProduct = createAsyncThunk(
   }
 );
 
-export const HTLProducts = createAsyncThunk('/HTLProducts', async ()=>{
+export const HTLProducts = createAsyncThunk("/HTLProducts", async () => {
   try {
-    let res =await axios.get(`${baseUrl}/products`)
+    let res = await axios.get(`${baseUrl}/products`);
     let item = res.data;
-    let sortitem = item.sort((a,b)=>a.Price - b.Price);
+    let sortitem = item.sort((a, b) => a.Price - b.Price);
     return sortitem;
   } catch (error) {
     console.log(error);
   }
-})
+});
 
-export const LTHProducts = createAsyncThunk('/LTHProducts', async ()=>{
+export const LTHProducts = createAsyncThunk("/LTHProducts", async () => {
   try {
-    let res =await axios.get(`${baseUrl}/products`)
-    let item =await res.data;
-    let sortitem = item.sort((a,b)=>b.Price - a.Price);
+    let res = await axios.get(`${baseUrl}/products`);
+    let item = await res.data;
+    let sortitem = item.sort((a, b) => b.Price - a.Price);
     return sortitem;
   } catch (error) {
     console.log(error);
   }
-})
+});
 
 export const productSlice = createSlice({
   name: "product",
@@ -158,13 +155,13 @@ export const productSlice = createSlice({
     builder.addCase(HTLProducts.fulfilled, (state, action) => {
       state.products = action.payload;
       state.isLoading = false;
-    })
+    });
 
     //LTHProducts
     builder.addCase(LTHProducts.fulfilled, (state, action) => {
       state.products = action.payload;
       state.isLoading = false;
-    })
+    });
 
     //SearchProduct
     // builder.addCase(SearchProduct.fulfilled, (state, action) => {

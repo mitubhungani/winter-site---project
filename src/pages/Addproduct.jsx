@@ -137,7 +137,7 @@ const Addproduct = () => {
       {/* Product List Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {prodata.products.map((ele) => (
-          <div id='no' key={ele.id} className="bg-white p-6 rounded shadow-md">
+          <div id="no" key={ele.id} className="bg-white p-6 rounded shadow-md">
             <img
               className="rounded h-80 w-full object-fill mb-4"
               src={ele.Image}

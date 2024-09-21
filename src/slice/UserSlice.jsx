@@ -41,7 +41,6 @@ export const createUser = createAsyncThunk(
       );
 
       if (userExists) {
-        toast.error("User already exists");
         return rejectWithValue("User already exists");
       }
 

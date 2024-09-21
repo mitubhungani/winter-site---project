@@ -77,8 +77,6 @@ const Home = () => {
         </div>
       </div>
 
-      
-
       {/* Bestseller Section */}
       <div
         id="no"

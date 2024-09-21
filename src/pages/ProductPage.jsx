@@ -39,7 +39,9 @@ const ProductPage = () => {
             <p className="text-gray-500 my-3 text-sm md:text-lg">
               {product.Desc}
             </p>
-            <p className="text-gray-500 text-sm my-3 md:text-lg">Category: {product.Category}</p>
+            <p className="text-gray-500 text-sm my-3 md:text-lg">
+              Category: {product.Category}
+            </p>
             <p className="text-base my-3 md:text-lg">Price: ${product.Price}</p>
           </div>
           <div className="flex  h-full items-center">
@@ -53,7 +55,6 @@ const ProductPage = () => {
         </div>
       </div>
 
-    
       {/* Product Section
       <div>
         <Productmap />

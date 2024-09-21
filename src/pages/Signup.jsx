@@ -33,6 +33,7 @@ const Signup = () => {
           <input
             type="text"
             placeholder="Username"
+            required
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -42,6 +43,7 @@ const Signup = () => {
           <input
             type="email"
             placeholder="Email"
+            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -51,6 +53,7 @@ const Signup = () => {
           <input
             type="password"
             placeholder="Password"
+            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"

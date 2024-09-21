@@ -2,14 +2,12 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-let baseUrl = 'https://json-server-deployment-y10f.onrender.com'
+let baseUrl = "https://json-server-deployment-y10f.onrender.com";
 // let baseUrl = 'http://localhost:3000'
 
 export const getCategory = createAsyncThunk("/category", async () => {
   try {
-    let res = await axios.get(
-      `${baseUrl}/category`
-    );
+    let res = await axios.get(`${baseUrl}/category`);
     return res.data;
   } catch (error) {
     console.log(error);
@@ -20,10 +18,7 @@ export const createCategory = createAsyncThunk(
   "/createCategory",
   async (categories) => {
     try {
-      let res = await axios.post(
-        `${baseUrl}/category`,
-        categories
-      );
+      let res = await axios.post(`${baseUrl}/category`, categories);
       toast.success("Category Add Successfully");
 
       return res.data;
@@ -37,9 +32,7 @@ export const deleteCategory = createAsyncThunk(
   "/deleteCategory",
   async (id) => {
     try {
-      let res = await axios.delete(
-        `${baseUrl}/category/${id}`
-      );
+      let res = await axios.delete(`${baseUrl}/category/${id}`);
       toast.success("Category Delete Successfully");
       return res.data;
     } catch (error) {
