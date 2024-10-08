@@ -16,7 +16,7 @@ const Signin = () => {
       username,
       password,
     };
-    console.log(user);
+    // console.log(user);
     dispatch(loginUser(user));
     navigate("/");
   };

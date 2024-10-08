@@ -14,7 +14,7 @@ const Addcategory = () => {
   const [id, setId] = useState();
 
   const data = useSelector((store) => store.category);
-  console.log(data);
+  // console.log(data);
 
   const handleSubmit = (e) => {
     e.preventDefault();

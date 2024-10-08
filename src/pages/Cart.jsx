@@ -29,7 +29,7 @@ const Cart = () => {
 
   const deleteAll = () => {
     let ids = data.carts.map((ele) => ele.id);
-    console.log("ids: ", ids);
+    // console.log("ids: ", ids);
 
     ids.map((id) => dispatch(deleteAllCartProduct(id)));
   };

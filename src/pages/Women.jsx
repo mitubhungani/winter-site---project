@@ -10,7 +10,7 @@ const Women = () => {
   const [searchItem, setSearchItem] = useState("");
 
   const productsData = useSelector((store) => store.products);
-  console.log(productsData);
+  // console.log(productsData);
 
   const womenProducts = productsData.products.filter(
     (product) => product.Category === "Women"

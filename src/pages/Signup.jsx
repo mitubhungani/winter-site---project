@@ -17,7 +17,7 @@ const Signup = () => {
       email,
       password,
     };
-    console.log(user);
+    // console.log(user);
     dispatch(createUser(user));
     navigate("/");
   };

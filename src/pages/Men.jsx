@@ -8,10 +8,10 @@ const Men = () => {
   const dispatch = useDispatch();
 
   const [searchItem, setSearchItem] = useState("");
-  console.log(searchItem);
+  // console.log(searchItem);
 
   const productsData = useSelector((store) => store.products);
-  console.log(productsData);
+  // console.log(productsData);
 
   const menProducts = productsData.products.filter(
     (product) => product.Category === "Men"
