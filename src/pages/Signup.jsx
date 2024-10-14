@@ -9,6 +9,7 @@ const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null); // To handle signup errors
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,9 +18,15 @@ const Signup = () => {
       email,
       password,
     };
-    // console.log(user);
-    dispatch(createUser(user));
-    navigate("/");
+
+    dispatch(createUser(user))
+      .unwrap() // For better error handling
+      .then(() => {
+        navigate("/"); // Navigate to home on success
+      })
+      .catch((err) => {
+        setError("Failed to create user. Try again."); // Set error message on failure
+      });
   };
 
   return (
@@ -29,6 +36,9 @@ const Signup = () => {
         className="w-full max-w-md bg-white p-8 rounded-lg shadow-md"
       >
         <h1 className="text-2xl font-bold text-center mb-6">Sign Up</h1>
+        {error && (
+          <p className="text-red-500 text-center mb-4">{error}</p> // Display error message
+        )}
         <div className="mb-4">
           <input
             type="text"
